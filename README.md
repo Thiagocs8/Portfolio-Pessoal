@@ -24,7 +24,7 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 
 | Tela | Preview |
 |---|---|
-| Sobre Mim | `docs/wireframes/01-sobre-mim.png` |
+| Sobre Mim | `[docs/wireframes/01-sobre-mim.png](https://github.com/Thiagocs8/Portfolio-Pessoal/blob/main/public/images/Sobre%20mim.pdf)` |
 | Projetos | `docs/wireframes/02-projetos.png` |
 | Experiências | `docs/wireframes/03-experiencias.png` |
 | Contato | `docs/wireframes/04-contato.png` |
