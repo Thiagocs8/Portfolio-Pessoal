@@ -24,12 +24,12 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 
 | Tela | Preview |
 |---|---|
-| Sobre Mim | [Sobre mim.pdf](public/images/Sobre%20mim.png) |
-| Projetos | [Projetos.pdf](public/images/Projetos.pdf) |
-| Experiências | [Experiência.pdf](public/images/Experi%C3%AAncia.pdf) |
-| Contato | [Contato.pdf](public/images/Contato.pdf) |
+| Sobre Mim | <img src="public/images/Sobre%20mim.png" width="220" alt="Wireframe Sobre Mim" /> |
+| Projetos | <img src="public/images/Projetos.png" width="220" alt="Wireframe Projetos" /> |
+| Experiências | <img src="public/images/Experi%C3%AAncia.png" width="220" alt="Wireframe Experiências" /> |
+| Contato | <img src="public/images/Contato.png" width="220" alt="Wireframe Contato" /> |
 
-> 📎 Exports do Figma em PDF, disponíveis em `public/images/`.
+> 📎 Exports do Figma em PNG, disponíveis em `public/images/`.
 
 **Identidade visual definida:** tema dark, paleta roxo (`#8B5CF6`) e ciano (`#21D3E5`) como cores de destaque, tipografia Inter.
 
