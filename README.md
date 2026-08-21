@@ -24,12 +24,12 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 
 | Tela | Preview |
 |---|---|
-| Sobre Mim | `[docs/wireframes/01-sobre-mim.png](https://github.com/Thiagocs8/Portfolio-Pessoal/blob/main/public/images/Sobre%20mim.pdf)` |
-| Projetos | `docs/wireframes/02-projetos.png` |
-| Experiências | `docs/wireframes/03-experiencias.png` |
-| Contato | `docs/wireframes/04-contato.png` |
+| Sobre Mim | [Sobre mim.pdf](public/images/Sobre%20mim.pdf) |
+| Projetos | [Projetos.pdf](public/images/Projetos.pdf) |
+| Experiências | [Experiência.pdf](public/images/Experi%C3%AAncia.pdf) |
+| Contato | [Contato.pdf](public/images/Contato.pdf) |
 
-> 📎 As imagens acima devem ser exportadas do Figma (File → Export ou clicar com o botão direito no frame → "Copy/Export") e salvas em `docs/wireframes/` antes do commit.
+> 📎 Exports do Figma em PDF, disponíveis em `public/images/`.
 
 **Identidade visual definida:** tema dark, paleta roxo (`#8B5CF6`) e ciano (`#21D3E5`) como cores de destaque, tipografia Inter.
 
@@ -54,7 +54,7 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 ```
 portfolio-thiago/
 ├── public/
-│   └── images/              # imagens dos projetos, avatar, etc.
+│   └── images/              # imagens dos projetos, avatar, wireframes exportados, etc.
 ├── src/
 │   ├── app/                 # rotas (Next.js App Router)
 │   │   ├── page.tsx          # Sobre Mim (home)
@@ -78,8 +78,6 @@ portfolio-thiago/
 │   │   └── experiences.ts
 │   └── styles/
 │       └── globals.css
-├── docs/
-│   └── wireframes/           # exports dos protótipos do Figma
 ├── package.json
 └── README.md
 ```
