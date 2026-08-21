@@ -24,7 +24,7 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 
 | Tela | Preview |
 |---|---|
-| Sobre Mim | [Sobre mim.pdf](public/images/Sobre%20mim.pdf) |
+| Sobre Mim | [Sobre mim.pdf](public/images/Sobre%20mim.png) |
 | Projetos | [Projetos.pdf](public/images/Projetos.pdf) |
 | Experiências | [Experiência.pdf](public/images/Experi%C3%AAncia.pdf) |
 | Contato | [Contato.pdf](public/images/Contato.pdf) |
