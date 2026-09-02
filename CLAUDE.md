@@ -17,7 +17,7 @@ Website de portfólio profissional de **Thiago Costa Soares**, para a disciplina
 3. **Experiências** — estágios, freelas, open source, eventos técnicos. Cada item: empresa/instituição, cargo/atividade, período, descrição breve.
 4. **Contato** — ícones clicáveis (e-mail, WhatsApp, LinkedIn, GitHub) + formulário (nome, e-mail, mensagem) com envio funcional por e-mail.
 
-Requisitos gerais: design responsivo, interface amigável, identidade visual coerente, hospedagem gratuita na nuvem (Vercel), README completo no GitHub.
+Requisitos gerais: design responsivo, interface amigável, identidade visual coerente, hospedagem gratuita na nuvem, README completo no GitHub.
 
 ## Meus 3 projetos (seção Projetos, ordem: do mais recente ao mais antigo)
 
@@ -62,14 +62,14 @@ Estrutura visual de cada tela (já implementada em código):
 
 - **Front-end:** Next.js (App Router) + React + Tailwind CSS
 - **Back-end:** API Route do Next.js (`src/app/api/contato/route.ts`) + [Resend](https://resend.com/) para envio de e-mail do formulário de contato — chega em `thiag0cs@outlook.com`
-- **Hospedagem:** Vercel (ainda não deployado)
+- **Hospedagem:** Render (Web Service Node, plano free) — https://portfolio-pessoal-kpty.onrender.com/, config em `render.yaml`. Foi pra Render em vez de Vercel porque a conta Vercel do Thiago ficou bloqueada em recuperação (1 dia útil) e o prazo era no mesmo dia (02/09/2026).
 - **Design:** Figma
 
 ### Envio de e-mail (Resend) — configuração local
 
 1. Conta Resend criada com o e-mail `thiag0cs@outlook.com` (sender de teste `onboarding@resend.dev` só entrega pro e-mail da própria conta enquanto não há domínio verificado — por isso a conta precisa ser esse e-mail).
 2. Variável de ambiente `RESEND_API_KEY` — copiar `.env.local.example` para `.env.local` e colar a key.
-3. Em produção (Vercel), a mesma variável precisa ser adicionada em Project Settings → Environment Variables.
+3. Em produção (Render), a mesma variável precisa ser adicionada em Environment → Environment Variables do serviço.
 
 ## Estrutura de pastas
 
@@ -104,7 +104,7 @@ portfolio-thiago/
 
 - [x] **Lab01S01** (4 pts) — Repositório GitHub, README inicial, wireframes de média fidelidade no Figma, protótipo inicial de front-end (navegação + layout base em código).
 - [x] **Lab01S02** (4 pts) — Sobre Mim (PT/EN), Projetos (timeline dinâmica), Experiências, Contato com formulário funcional (Resend), responsividade.
-- [ ] **Lab01S03** (7 pts) — Deploy (Vercel), ajustes visuais/usabilidade, README final completo.
+- [ ] **Lab01S03** (7 pts) — Deploy (Render) ✅, ajustes visuais/usabilidade, README final completo.
 
 ## Convenções de código
 

@@ -2,6 +2,8 @@
 
 Website de portfólio profissional desenvolvido para a disciplina **Projeto de Software** (Engenharia de Software — PUC Minas), Laboratório 1 — Segundo Semestre/2026.
 
+🔗 **Site publicado:** [portfolio-pessoal-kpty.onrender.com](https://portfolio-pessoal-kpty.onrender.com/)
+
 ## 📌 Sobre o projeto
 
 O objetivo deste site é apresentar minha trajetória, habilidades, projetos acadêmicos e formas de contato de maneira moderna e acessível. O sistema é dividido em 4 seções principais, navegáveis por um menu:
@@ -48,10 +50,10 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 1. Crie uma conta gratuita em [resend.com](https://resend.com/) usando o e-mail `thiag0cs@outlook.com` (é para onde as mensagens do formulário chegam).
 2. Gere uma API Key no painel do Resend.
 3. Rode `cp .env.local.example .env.local` e cole a chave em `RESEND_API_KEY`.
-4. No deploy (Vercel), adicione a mesma variável `RESEND_API_KEY` em Project Settings → Environment Variables.
+4. No deploy (Render), adicione a mesma variável `RESEND_API_KEY` em Environment → Environment Variables.
 
 **Hospedagem**
-- [Vercel](https://vercel.com/) (front-end + API routes em Next.js)
+- [Render](https://render.com/) (Web Service Node — `npm run build` + `npm run start`, configurado em `render.yaml`)
 
 **Design**
 - Figma (wireframes e protótipos)
@@ -95,8 +97,20 @@ portfolio-thiago/
 
 - [x] **Lab01S01** — Planejamento e prototipação (repositório, wireframes, protótipo inicial de front-end, navegação e layout base)
 - [x] **Lab01S02** — Implementação das funcionalidades principais (Sobre Mim PT/EN, Projetos com timeline, Experiências, Contato com formulário funcional)
-- [ ] **Lab01S03** — Deploy, ajustes finais, imagens/GIFs dos projetos, README final
+- [ ] **Lab01S03** — Deploy ✅, ajustes finais, imagens/GIFs dos projetos, README final
 
 ## 🚧 Status
 
-Projeto em desenvolvimento — instruções de instalação e execução local, dependências completas e link do site publicado serão adicionados ao final do projeto (Lab01S03).
+Site publicado no Render: https://portfolio-pessoal-kpty.onrender.com/
+
+⚠️ O plano gratuito do Render "dorme" após 15 min sem acesso — o primeiro carregamento depois disso pode levar 30-50s.
+
+Instruções completas de instalação local:
+
+```bash
+git clone https://github.com/Thiagocs8/Portfolio-Pessoal.git
+cd Portfolio-Pessoal
+npm install
+cp .env.local.example .env.local   # cole sua RESEND_API_KEY
+npm run dev
+```
