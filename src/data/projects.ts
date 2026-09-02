@@ -39,23 +39,6 @@ export const projects: Project[] = [
     imageBg: "dark",
   },
   {
-    name: "Pett em Casa",
-    description:
-      "Plataforma web para proprietária de hotel de pets, que profissionaliza os serviços, otimiza a rotina da equipe e facilita o controle das informações dos animais.",
-    technologies: [
-      "TypeScript",
-      "JavaScript",
-      "Java",
-      "Spring Boot",
-      "Node.js",
-      "PostgreSQL",
-      "CSS",
-    ],
-    repoUrl: null,
-    isPrivate: true,
-    image: null,
-  },
-  {
     name: "Gnosi",
     description:
       "Plataforma de cursos EAD gratuita, criada para democratizar o acesso à educação de qualidade.",
