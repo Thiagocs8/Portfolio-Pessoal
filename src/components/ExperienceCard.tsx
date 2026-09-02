@@ -14,7 +14,18 @@ export default function ExperienceCard({
       <div className="flex-1">
         <h3 className="text-base font-bold">{experience.role}</h3>
         <p className="text-sm font-semibold text-accent-2">
-          {experience.organization}
+          {experience.organizationUrl ? (
+            <a
+              href={experience.organizationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              {experience.organization}
+            </a>
+          ) : (
+            experience.organization
+          )}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-muted">
           {experience.description}

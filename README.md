@@ -41,7 +41,14 @@ Os wireframes de média fidelidade das 4 telas foram criados no Figma:
 - Tailwind CSS (estilização)
 
 **Back-end**
-- API Routes do Next.js (ou Node.js/Express, a confirmar) — necessário para o envio de e-mail do formulário de contato
+- API Route do Next.js (`src/app/api/contato/route.ts`) + [Resend](https://resend.com/) — envio de e-mail do formulário de contato
+
+### Configurar o envio de e-mail (Resend)
+
+1. Crie uma conta gratuita em [resend.com](https://resend.com/) usando o e-mail `thiag0cs@outlook.com` (é para onde as mensagens do formulário chegam).
+2. Gere uma API Key no painel do Resend.
+3. Rode `cp .env.local.example .env.local` e cole a chave em `RESEND_API_KEY`.
+4. No deploy (Vercel), adicione a mesma variável `RESEND_API_KEY` em Project Settings → Environment Variables.
 
 **Hospedagem**
 - [Vercel](https://vercel.com/) (front-end + API routes em Next.js)
@@ -87,7 +94,7 @@ portfolio-thiago/
 ## 🗺️ Progresso (Sprints)
 
 - [x] **Lab01S01** — Planejamento e prototipação (repositório, wireframes, protótipo inicial de front-end, navegação e layout base)
-- [ ] **Lab01S02** — Implementação das funcionalidades principais (Sobre Mim PT/EN, Projetos com timeline, Experiências, Contato com formulário funcional)
+- [x] **Lab01S02** — Implementação das funcionalidades principais (Sobre Mim PT/EN, Projetos com timeline, Experiências, Contato com formulário funcional)
 - [ ] **Lab01S03** — Deploy, ajustes finais, imagens/GIFs dos projetos, README final
 
 ## 🚧 Status

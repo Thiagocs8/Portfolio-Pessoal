@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n";
 
@@ -34,18 +35,18 @@ const highlights = [
   },
 ];
 
-// TODO: revisar lista real de skills técnicas de Thiago.
 const skills = [
   "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
-  "Tailwind CSS",
+  "Java",
+  "Spring Boot",
   "Node.js",
-  "SQL",
+  "PostgreSQL",
+  "Tailwind CSS",
+  "C",
   "Git",
-  "Microsoft 365",
-  "Azure",
 ];
 
 export default function Home() {
@@ -102,9 +103,15 @@ export default function Home() {
         </div>
 
         <div className="mx-auto aspect-square w-full max-w-xs rounded-full bg-gradient-to-br from-accent to-accent-2 p-1">
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-surface text-sm text-muted">
-            {locale === "pt" ? "Foto / avatar" : "Photo / avatar"}
-          </div>
+          <Image
+            src="/images/avatar.jpg"
+            alt="Thiago Costa Soares"
+            width={320}
+            height={320}
+            className="h-full w-full rounded-full object-cover"
+            style={{ objectPosition: "50% 20%" }}
+            priority
+          />
         </div>
       </section>
 

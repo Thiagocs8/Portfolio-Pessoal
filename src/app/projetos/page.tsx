@@ -6,7 +6,7 @@ export default function ProjetosPage() {
     <div className="mx-auto max-w-4xl px-6 py-16">
       <h1 className="text-3xl font-extrabold tracking-tight">Projetos</h1>
       <p className="mt-2 text-muted">
-        Do mais antigo ao mais recente, projetos desenvolvidos ao longo da
+        Do mais recente ao mais antigo, projetos desenvolvidos ao longo da
         faculdade.
       </p>
 

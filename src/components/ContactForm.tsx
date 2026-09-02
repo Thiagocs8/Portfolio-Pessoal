@@ -2,13 +2,44 @@
 
 import { useState, type FormEvent } from "react";
 
-export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+type Status = "idle" | "sending" | "sent" | "error";
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+export default function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Envio funcional por e-mail será implementado na Lab01S02.
-    setStatus("sent");
+    setStatus("sending");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+        }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => null);
+        throw new Error(body?.error ?? "Falha ao enviar a mensagem.");
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Falha ao enviar a mensagem.",
+      );
+    }
   };
 
   return (
@@ -54,16 +85,20 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="mt-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        disabled={status === "sending"}
+        className="mt-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        Enviar mensagem
+        {status === "sending" ? "Enviando..." : "Enviar mensagem"}
       </button>
 
       {status === "sent" && (
         <p className="text-sm text-accent-2">
-          Formulário validado! O envio funcional por e-mail chega na próxima
-          sprint (Lab01S02).
+          Mensagem enviada com sucesso! Retorno em breve.
         </p>
+      )}
+
+      {status === "error" && (
+        <p className="text-sm text-red-400">{errorMessage}</p>
       )}
     </form>
   );
