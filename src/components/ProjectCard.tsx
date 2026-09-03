@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import type { Project } from "@/data/projects";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { locale, t } = useLanguage();
+
   return (
     <div className="rounded-2xl border border-white/10 bg-surface p-6">
       {project.image ? (
@@ -12,7 +17,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         >
           <Image
             src={project.image}
-            alt={`Logo do projeto ${project.name}`}
+            alt={`${t.projectCard.imageAlt} ${project.name}`}
             width={320}
             height={180}
             className="h-full w-full object-contain"
@@ -20,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
       ) : (
         <div className="mb-4 flex aspect-video items-center justify-center rounded-xl border border-dashed border-white/15 bg-background text-sm text-muted">
-          Imagem / GIF do projeto
+          {t.projectCard.noImage}
         </div>
       )}
 
@@ -33,20 +38,20 @@ export default function ProjectCard({ project }: { project: Project }) {
             rel="noopener noreferrer"
             className="rounded-full border border-accent-2/40 px-3 py-1 text-xs font-semibold text-accent-2 transition-colors hover:bg-accent-2/10"
           >
-            GitHub
+            {t.projectCard.github}
           </a>
         ) : (
           <span
             className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-muted"
-            title="Projeto acadêmico em repositório privado"
+            title={t.projectCard.privateRepo}
           >
-            {project.isPrivate ? "Repositório privado" : "Sem repositório"}
+            {project.isPrivate ? t.projectCard.privateRepo : t.projectCard.noRepo}
           </span>
         )}
       </div>
 
       <p className="mb-4 text-sm leading-relaxed text-muted">
-        {project.description}
+        {project.description[locale]}
       </p>
 
       <div className="flex flex-wrap gap-2">

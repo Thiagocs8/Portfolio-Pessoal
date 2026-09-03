@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -29,7 +31,7 @@ export default function ContactForm() {
 
       if (!response.ok) {
         const body = await response.json().catch(() => null);
-        throw new Error(body?.error ?? "Falha ao enviar a mensagem.");
+        throw new Error(body?.error ?? t.contactForm.genericError);
       }
 
       setStatus("sent");
@@ -37,7 +39,7 @@ export default function ContactForm() {
     } catch (error) {
       setStatus("error");
       setErrorMessage(
-        error instanceof Error ? error.message : "Falha ao enviar a mensagem.",
+        error instanceof Error ? error.message : t.contactForm.genericError,
       );
     }
   };
@@ -46,7 +48,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <label htmlFor="name" className="text-sm font-medium text-muted">
-          Nome
+          {t.contactForm.name}
         </label>
         <input
           id="name"
@@ -59,7 +61,7 @@ export default function ContactForm() {
 
       <div className="flex flex-col gap-2">
         <label htmlFor="email" className="text-sm font-medium text-muted">
-          E-mail
+          {t.contactForm.email}
         </label>
         <input
           id="email"
@@ -72,7 +74,7 @@ export default function ContactForm() {
 
       <div className="flex flex-col gap-2">
         <label htmlFor="message" className="text-sm font-medium text-muted">
-          Mensagem
+          {t.contactForm.message}
         </label>
         <textarea
           id="message"
@@ -88,13 +90,11 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="mt-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        {status === "sending" ? "Enviando..." : "Enviar mensagem"}
+        {status === "sending" ? t.contactForm.sending : t.contactForm.send}
       </button>
 
       {status === "sent" && (
-        <p className="text-sm text-accent-2">
-          Mensagem enviada com sucesso! Retorno em breve.
-        </p>
+        <p className="text-sm text-accent-2">{t.contactForm.success}</p>
       )}
 
       {status === "error" && (

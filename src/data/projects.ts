@@ -1,6 +1,11 @@
+export type LocalizedText = {
+  pt: string;
+  en: string;
+};
+
 export type Project = {
   name: string;
-  description: string;
+  description: LocalizedText;
   technologies: string[];
   repoUrl: string | null;
   isPrivate?: boolean;
@@ -13,8 +18,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Seri.Estúdio",
-    description:
-      "Plataforma web de gestão de pedidos de serigrafia: o cliente monta a encomenda, envia a arte e visualiza o produto em 3D acompanhando a produção, enquanto o admin controla orçamentos, custos, materiais, estoque e pedidos.",
+    description: {
+      pt: "Plataforma web de gestão de pedidos de serigrafia: o cliente monta a encomenda, envia a arte e visualiza o produto em 3D acompanhando a produção, enquanto o admin controla orçamentos, custos, materiais, estoque e pedidos.",
+      en: "Web platform for managing screen-printing orders: the customer builds the order, submits the artwork, and views the product in 3D while tracking production, while the admin manages quotes, costs, materials, stock, and orders.",
+    },
     technologies: [
       "TypeScript",
       "JavaScript",
@@ -30,8 +37,10 @@ export const projects: Project[] = [
   },
   {
     name: "ClassHub",
-    description:
-      "Plataforma acadêmica integrada para uma escola, centralizando informações escolares, comunicação entre aluno/professor/coordenação, envio e recebimento de tarefas, notas, materiais didáticos e desempenho acadêmico.",
+    description: {
+      pt: "Plataforma acadêmica integrada para uma escola, centralizando informações escolares, comunicação entre aluno/professor/coordenação, envio e recebimento de tarefas, notas, materiais didáticos e desempenho acadêmico.",
+      en: "Integrated academic platform for a school, centralizing school information, communication between student/teacher/coordination, assignment submission and grading, grades, learning materials, and academic performance.",
+    },
     technologies: ["JavaScript", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
     repoUrl: null,
     isPrivate: true,
@@ -40,8 +49,10 @@ export const projects: Project[] = [
   },
   {
     name: "Gnosi",
-    description:
-      "Plataforma de cursos EAD gratuita, criada para democratizar o acesso à educação de qualidade.",
+    description: {
+      pt: "Plataforma de cursos EAD gratuita, criada para democratizar o acesso à educação de qualidade.",
+      en: "Free online course platform, created to democratize access to quality education.",
+    },
     technologies: [
       "TypeScript",
       "JavaScript",
